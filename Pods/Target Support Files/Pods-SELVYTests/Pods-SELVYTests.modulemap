@@ -1,0 +1,6 @@
+framework module Pods_SELVYTests {
+  umbrella header "Pods-SELVYTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

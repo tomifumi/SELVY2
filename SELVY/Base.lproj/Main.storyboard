@@ -43,11 +43,18 @@
                                 <action selector="cancel:" destination="BYZ-38-t0r" id="ssL-2P-JbQ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="d9f-y3-2dk">
-                            <connections>
-                                <segue destination="cuE-9f-Mib" kind="unwind" unwindAction="unwindToMemoListWithSender:" id="zmP-8G-C3a"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="save" id="d9f-y3-2dk">
+                                <connections>
+                                    <segue destination="cuE-9f-Mib" kind="unwind" unwindAction="unwindToMemoListWithSender:" id="zmP-8G-C3a"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Chart" id="NT9-OR-6pT">
+                                <connections>
+                                    <segue destination="hgB-dz-USP" kind="show" id="LG2-Ra-kQf"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="memoTextField" destination="61e-B1-Ceg" id="0KG-oI-tig"/>
@@ -58,6 +65,38 @@
                 <exit id="cuE-9f-Mib" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2308.695652173913" y="-5.3571428571428568"/>
+        </scene>
+        <!--Chart View Controller-->
+        <scene sceneID="bEa-Bx-LSg">
+            <objects>
+                <viewController id="hgB-dz-USP" customClass="ChartViewController" customModule="SELVY" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6sb-2W-hXb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oc6-6Q-ALU" customClass="LineChartView" customModule="Charts">
+                                <rect key="frame" x="20" y="108" width="374" height="734"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oc6-6Q-ALU" firstAttribute="centerX" secondItem="6sb-2W-hXb" secondAttribute="centerX" id="5T7-o6-jof"/>
+                            <constraint firstItem="oc6-6Q-ALU" firstAttribute="centerY" secondItem="6sb-2W-hXb" secondAttribute="centerY" id="5hB-Mo-fI7"/>
+                            <constraint firstItem="oc6-6Q-ALU" firstAttribute="leading" secondItem="Hwg-g3-NJC" secondAttribute="leading" constant="20" id="9ns-dn-8ge"/>
+                            <constraint firstItem="Hwg-g3-NJC" firstAttribute="bottom" secondItem="oc6-6Q-ALU" secondAttribute="bottom" constant="20" id="DHp-oH-tVi"/>
+                            <constraint firstItem="oc6-6Q-ALU" firstAttribute="top" secondItem="Hwg-g3-NJC" secondAttribute="top" constant="20" id="Ddi-xe-JKw"/>
+                            <constraint firstItem="Hwg-g3-NJC" firstAttribute="trailing" secondItem="oc6-6Q-ALU" secondAttribute="trailing" constant="20" id="iDK-nz-ZGa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Hwg-g3-NJC"/>
+                    </view>
+                    <connections>
+                        <outlet property="lineChartView" destination="oc6-6Q-ALU" id="zxf-RX-Dne"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iar-kG-dwG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3164" y="-5"/>
         </scene>
         <!--Check Action-->
         <scene sceneID="oGf-GB-jgo">
